@@ -1,0 +1,36 @@
+Inicio
+	Escribe "CAJA DE LA TIENDA"
+	
+	suma_unitaria = 0
+	uds = 0
+	
+	num_uds = 1
+	precio_unitario = 1
+	
+	Mientras precio_unitario != 0 hacer
+		Escribe "Introduce el precio unitario en euros (0 para terminar): "
+		Lee precio_unitario
+		
+		Si precio_unitario < 0 entonces
+			Escribe "El precio no puede ser negativo."
+			Escribe "Introduce el precio unitario en euros (0 para terminar): "
+			Lee precio_unitario
+				
+		Si precio_unitario > 0 entonces
+			Lee precio_unitario
+			suma_unitaria = suma_unitaria + precio_unitario
+			Escribe "Introduce el número de unidades: "
+			Lee num_uds
+			Mientras num_uds == 0 hacer
+				Escribe "La cantidad debe ser mayor que 0."
+				Escribe "Introduce el número de unidades: "
+				Lee num_uds
+				
+			Si num_uds > 0 entonces
+				Lee num_uds
+				uds = uds + num_uds
+					
+				
+			
+					
+					
