@@ -19,6 +19,7 @@ Inicio
 		Si precio_unitario > 0 entonces
 			Lee precio_unitario
 			suma_unitaria = suma_unitaria + precio_unitario
+			suma_final = suma_unitaria
 			Escribe "Introduce el número de unidades: "
 			Lee num_uds
 			Mientras num_uds == 0 hacer
@@ -30,6 +31,9 @@ Inicio
 				Lee num_uds
 				uds = uds + num_uds
 					
+	Si precio_unitario == 0 entonces
+		Escribe "No se han registrado productos."
+	
 	descuento_1 = 5
 	descuento_2 = 10
 	Si suma_unitaria >= 50 and suma_unitaria < 100 entonces
@@ -44,11 +48,13 @@ Inicio
 					
 	Escribe "RESUMEN DE LA COMPRA"
 	Escribe "Unidades compradas: " + uds
-	Escribe "Importe antes del descuento: " + 
+	Escribe "Importe antes del descuento: " + suma_final
 	Escribe "Descuento aplicado: " + descuento + " %"
-	Escribe "Descuento: " + 
-	Escribe "Importe final: " + suma_unitaria
 	
+	escribe_descuento = suma_unitaria * descuento / 100
+	Escribe "Descuento: " + escribe_descuento
+	Escribe "Importe final: " + suma_unitaria
+Fin
 				
 			
 					
