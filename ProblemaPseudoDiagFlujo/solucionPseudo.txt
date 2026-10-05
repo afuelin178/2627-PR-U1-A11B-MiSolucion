@@ -1,61 +1,54 @@
 Inicio
-	Escribe "CAJA DE LA TIENDA"
-	
-	suma_unitaria = 0
-	uds = 0
-	
-	num_uds = 1
-	precio_unitario = 1
-	
-	Mientras precio_unitario != 0 hacer
-		Escribe "Introduce el precio unitario en euros (0 para terminar): "
-		Lee precio_unitario
-		
-		Si precio_unitario < 0 entonces
-			Escribe "El precio no puede ser negativo."
-			Escribe "Introduce el precio unitario en euros (0 para terminar): "
-			Lee precio_unitario
-				
-		Si precio_unitario > 0 entonces
-			Lee precio_unitario
-			suma_unitaria = suma_unitaria + precio_unitario
-			suma_final = suma_unitaria
-			Escribe "Introduce el número de unidades: "
-			Lee num_uds
-			Mientras num_uds == 0 hacer
-				Escribe "La cantidad debe ser mayor que 0."
-				Escribe "Introduce el número de unidades: "
-				Lee num_uds
-				
-			Si num_uds > 0 entonces
-				Lee num_uds
-				uds = uds + num_uds
-					
-	Si precio_unitario == 0 entonces
-		Escribe "No se han registrado productos."
-	
-	descuento_1 = 5
-	descuento_2 = 10
-	Si suma_unitaria >= 50 and suma_unitaria < 100 entonces
-		suma_unitaria = suma_unitaria * descuento_1 / 100
-		descuento = 5
-			
-	Si suma_unitaria >= 100 entonces
-		suma_unitaria = suma_unitaria * descuento_2 / 100
-		descuento = 10
-					
-					
-					
-	Escribe "RESUMEN DE LA COMPRA"
-	Escribe "Unidades compradas: " + uds
-	Escribe "Importe antes del descuento: " + suma_final
-	Escribe "Descuento aplicado: " + descuento + " %"
-	
-	escribe_descuento = suma_unitaria * descuento / 100
-	Escribe "Descuento: " + escribe_descuento
-	Escribe "Importe final: " + suma_unitaria
+    Escribe "CAJA DE LA TIENDA"
+	Escribe ""
+
+    suma_unitaria = 0
+    uds = 0
+
+    num_uds = 1
+    precio_unitario = 1
+
+    Mientras precio_unitario != 0 hacer
+        Escribe "Introduce el precio unitario en euros (0 para terminar): "
+        Lee precio_unitario
+
+        Mientras precio_unitario < 0 hacer
+            Escribe "El precio no puede ser negativo."
+            Escribe "Introduce el precio unitario en euros (0 para terminar): "
+            Lee precio_unitario
+
+        Si precio_unitario > 0 entonces
+            Escribe "Introduce el número de unidades: "
+            Lee num_uds
+
+            Mientras num_uds <= 0 hacer
+                Escribe "La cantidad debe ser mayor que 0."
+                Escribe "Introduce el número de unidades: "
+                Lee num_uds
+
+            suma_unitaria = suma_unitaria + precio_unitario * num_uds
+            uds = uds + num_uds
+
+
+    Si uds == 0 entonces
+        Escribe "No se han registrado productos."
+
+    Si uds > 0 entonces
+        descuento = 0
+
+        Si suma_unitaria >= 50 and suma_unitaria < 100 entonces
+            descuento = 5
+        Sino
+            descuento = 10
+
+        escribe_descuento = suma_unitaria * descuento / 100
+        suma_final = suma_unitaria - escribe_descuento
+
+		EScribe ""
+        Escribe "RESUMEN DE LA COMPRA"
+        Escribe "Unidades compradas: " + uds
+        Escribe "Importe antes del descuento: " + suma_unitaria
+        Escribe "Descuento aplicado: " + descuento + " %"
+        Escribe "Descuento: " + escribe_descuento
+        Escribe "Importe final: " + suma_final
 Fin
-				
-			
-					
-					
